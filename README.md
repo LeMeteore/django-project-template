@@ -18,7 +18,7 @@ This is a simple Django 1.7+ project template with my preferred setup. Most Djan
 ## How to install
 
 ```bash
-$ django-admin.py startproject --template=https://github.com/jpadilla/django-project-template/archive/master.zip --extension=py,md,env project_name
+$ django-admin.py startproject --template=https://github.com/jpadilla/django-project-template/archive/master.zip --name=Procfile --extension=py,md,env project_name
 $ mv example.env .env
 $ pip install -r requirements.txt
 ```
@@ -59,5 +59,5 @@ $ heroku addons:add heroku-postgresql:dev
 $ heroku addons:add newrelic
 $ heroku pg:promote DATABASE_URL
 $ heroku config:set ENVIRONMENT=PRODUCTION
-$ heroku config:set DJANGO_SECRET_KEY=RANDOM_SECRET_KEY_HERE
+$ heroku config:set DJANGO_SECRET_KEY=`./manage.py generate_secret_key`
 ```
